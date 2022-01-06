@@ -1,106 +1,87 @@
-function validatedate()
-{
-	 var dob = document.getElementById("dob").value;
-	 if(!isDate(dob))
-	 {
-		 alert('Please enter valid date.');
-		 document.getElementById("dob").value="";
-		 document.getElementById("ageId").value="";
-		 return false;
-	 }
-	 else
-	 {
-		 ageCount();
-		 return true;
-	 }	 
+function validatedate() {
+	var dob = document.getElementById("dob").value;
+	if(!isDate(dob)) {
+		alert('Please enter valid date.');
+		document.getElementById("dob").value = "";
+		document.getElementById("ageId").value = "";
+		return false;
+	} else {
+		ageCount();
+		return true;
+	}	 
 }
 
-function isDate(txtDate)
-{
-    var currVal = txtDate;
-    if(currVal == '')
-        return false;
-    
-    var rxDatePattern = /^(\d{4})(\/|-)(\d{1,2})(\/|-)(\d{1,2})$/; //Declare Regex
-    var dtArray = currVal.match(rxDatePattern); // is format OK?
-    
-    if (dtArray == null) 
-        return false;
-    
-    //Checks for mm/dd/yyyy format.
-    dtMonth = dtArray[3];
-    dtDay= dtArray[5];
-    dtYear = dtArray[1];        
-    
-    if (dtMonth < 1 || dtMonth > 12) 
-        return false;
-    else if (dtDay < 1 || dtDay> 31) 
-        return false;
-    else if ((dtMonth==4 || dtMonth==6 || dtMonth==9 || dtMonth==11) && dtDay ==31) 
-        return false;
-    else if (dtMonth == 2) 
-    {
-        var isleap = (dtYear % 4 == 0 && (dtYear % 100 != 0 || dtYear % 400 == 0));
-        if (dtDay> 29 || (dtDay ==29 && !isleap)) 
-                return false;
-    }
-    return true;
-}  
+function isDate(txtDate) {
+	var currVal = txtDate;
+	if(currVal == '')
+		return false;
+	
+	var rxDatePattern = /^(\d{1,2})(\-|-)(\d{1,2})(\-|-)(\d{4})$/; //Declare Regex
+	var dtArray = currVal.match(rxDate); // is format OK?
+	
+	if (dtArray == null) 
+		return false;
+
+	// Checks for mm/dd/yyyy format.
+	dtMonth = dtArray[3];
+	dtDay = dtArray[1];
+	dtYear = dtArray[5];        
+	
+	if (dtMonth < 1 || dtMonth > 12) 
+		return false;
+	else if (dtDay < 1 || dtDay> 31) 
+		return false;
+	else if ((dtMonth == 4 || dtMonth == 6 || dtMonth == 9 || dtMonth == 11) && dtDay == 31) 
+		return false;
+	else if (dtMonth == 2) {
+		var isleap = (dtYear % 4 == 0 && (dtYear % 100 != 0 || dtYear % 400 == 0));
+		if (dtDay> 29 || (dtDay ==29 && !isleap)) 
+				return false;
+	}
+	return true;
+}
 
 function ageCount() {
-    var date1 = new Date();
-    var dob = document.getElementById("dob").value;
-    var date2 = new Date(dob);
-    var pattern = /^\d{4}\/\d{1,2}\/\d{1,2}$/;
-    //Regex to validate date format (yyyy/mm/dd)       
-    if (pattern.test(dob)) {
-        var y1 = date1.getFullYear();
-        //getting current year            
-        var y2 = date2.getFullYear();
-        //getting dob year            
-        var age = y1 - y2;
-        //calculating age 
-		if(!isNaN(age))
-		{
+	var date1 = new Date();
+	var dob = document.getElementById("dob").value;
+	var date2 = new Date(dob);
+	var pattern = /^\d{4}\/\d{1,2}\/\d{1,2}$/;
+	// Regex to validate date format (yyyy/mm/dd)       
+	if (pattern.test(dob)) {
+		var y1 = date1.getFullYear();
+		//getting current year            
+		var y2 = date2.getFullYear();
+		//getting dob year            
+		var age = y1 - y2;
+		//calculating age 
+		if(!isNaN(age)) {
 			document.getElementById("ageId").value = age;
 			document.getElementById("ageId").focus ();
-		}
-		else
-		{
+		} else {
 			 alert("Invalid date format. Please Input in (yyyy/mm/dd) format!");
 			 document.getElementById('dob').outerHTML = document.getElementById('dob').outerHTML;
 			 return false;
 		}
-        return true;
-    } else {
-        alert("Invalid date format. Please Input in (yyyy/mm/dd) format!");
+		return true;
+	} else {
+		alert("Invalid date format. Please Input in (yyyy/mm/dd) format!");
 		document.getElementById('dob').outerHTML = document.getElementById('dob').outerHTML;
-        return false;
-    }
-
+		return false;
+	}
 }
-
-
-
-
 
 function validateForm() {
 	
-	
-	if( document.getElementById("name").value == "")
-	{
+	if( document.getElementById("name").value == "") {
 		alert("Kindly enter your Name.");
 		return false;
 	}
-	if(!document.getElementById("name").value.match(/^[a-zA-Z .']+$/))
-	{		
+	if(!document.getElementById("name").value.match(/^[a-zA-Z .']+$/)) {		
 		alert("Enter only alphabets in name field.");
 		document.getElementById('name').value = "";
 		return false;
 	}
-			
-	if( !document.getElementById("male").checked  &&  !document.getElementById("female").checked )
-	{
+	if( !document.getElementById("male").checked  &&  !document.getElementById("female").checked) {
 		alert("Please Fill in your Gender");
 		return false;
 	}
@@ -182,7 +163,7 @@ function validateForm() {
 		document.getElementById('pgdep').value = "";
 		return false;
 	}
-    if(!document.getElementById("pgmark").value.match(/^[0-9]+$/) && !document.getElementById("pgmark").value=="" )
+	if(!document.getElementById("pgmark").value.match(/^[0-9]+$/) && !document.getElementById("pgmark").value=="" )
 	{		
 		alert("Enter PG mark field correctly.");
 		document.getElementById('pgmark').value = "";
@@ -325,7 +306,7 @@ function validateForm() {
 		alert("Kindly upload your resume.");
 		return false;
 	}
-	   	
+		
 	return true;
 }
 
@@ -408,10 +389,10 @@ function updateAreaOther()
 }
 
  function Checkfiles()
-    {
-        var fup = document.getElementById('resume');
-        var fileName = fup.value;
-        var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+	{
+		var fup = document.getElementById('resume');
+		var fileName = fup.value;
+		var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
 
 		if(ext =="doc" || ext=="docx" || ext=="pdf" || ext =="DOC" || ext=="DOCX" || ext=="PDF")
 		{
@@ -424,7 +405,7 @@ function updateAreaOther()
 			alert("Upload files with .doc or .docx or .pdf extensions only");
 			return false;
 		}
-    }
+	}
 	
 function validateEmail(email){
 //	var emailReg = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);

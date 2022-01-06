@@ -84,10 +84,10 @@
 								<div class="form-group">
 									<table> 
 										<tr>
-											<td width="218"><label>Name</label></td>
-											<td width="178"><input name="name" type="text" class="form-control" id="name" placeholder="Your name"></td> 
+											<td width="210"><label>Name</label></td>
+											<td width="170"><input name="name" type="text" class="form-control" id="name" placeholder="Your name"></td> 
 											<td width="100"><label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Gender</label></td>
-											<td width="95"><input type="radio" id="male" name="gender" value="male">Male</td>
+											<td width="95"><input type="radio" id="male" name="gender" value="male"> Male</td>
 											<td width="350"><input type="radio" id="female" value="female" name="gender"> Female </td>
 										</tr>
 									</table>
@@ -96,20 +96,11 @@
 									<table> 
 										<tr>
 											<td width="210"><label>Date Of Birth</label></td>
-											<td width="170"><input type="text" name="dob" id="dob" class="form-control" placeholder="yyyy/mm/dd" onBlur="return validatedate()"></td> 							
-											<td width="100"><label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Age</label></td> <td width="170"><input type="text" readonly="true" name="age" id="ageId" class="form-control" placeholder="age"></td>
-										</tr>
-									</table>
-								</div>
-								<div class="form-group">
-									<table> 
-										<tr>
-											<td width="210"><label>Diploma or HSC</label></td>
-											<td width="170"> <input type="text" name="dipdep" id="dipdep" class="form-control" placeholder="Department"></td>
-											<td width="100"><label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mark</label></td>
-											<td width="170"> <input type="text" id="dipmark" name="dipmark" class="form-control" placeholder="%"> </td>
-											<td width="88"><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year </label></td>
-											<td width="170"><input type="text" id="dipyear" name="dipyear" class="form-control" placeholder="yyyy"> </td>
+											<td width="170"><input type="text" name="dob" id="dob" class="form-control" placeholder="dd-mm-yyyy" onBlur="return validatedate()"></td> 							
+											<td width="100"><label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Age</label></td> 
+											<td width="170"><input type="text" readonly="true" name="age" id="ageId" class="form-control" placeholder="age"></td>
+											<td width="88"><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone </label></td>
+											<td width="170"><input type="text" name="phone" id="phone" class="form-control" placeholder="Phone number" onBlur="phone()"></td>
 										</tr>
 									</table>
 								</div>
@@ -120,7 +111,8 @@
 											<td width="170"><input type="text" id="ugdep" name="ugdep" class="form-control" placeholder="Department"></td>
 											<td width="100"><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mark</label></td>
 											<td width="170"><input type="text" id="ugmark" name="ugmark" class="form-control" placeholder="%"></td>
-											<td width="88"><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year </label></td> <td width="170"><input type="text" id="ugyear" name="ugyear" class="form-control" placeholder="yyyy"></td>
+											<td width="88"><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Year </label></td> 
+											<td width="170"><input type="text" id="ugyear" name="ugyear" class="form-control" placeholder="yyyy"></td>
 										</tr>
 									</table>
 								</div>
@@ -137,26 +129,6 @@
 									</table>
 								</div>
 								<div class="form-group">
-									<table> 
-										<tr>
-										  	<td width="210"><label>Email</label></td>
-											<td width="170"><input type="email" name="email" id="email" class="form-control" placeholder="Email address" onBlur="emaillower()"></td>
-											<td width="100"> <label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Phone</label></td>
-											<td width="174"><input type="text" name="phone" id="phone" class="form-control" placeholder="Phone number" onBlur="phone()"></td>
-										</tr>
-									</table>
-								</div>
-								<div class="form-group">
-									<table width="692"> 
-										<tr>
-											<td width="210"><label>Having Passport</label></td>
-											<td width="52"><input type="radio" id="yespass" name="pass" value="yes" onClick="showPassport()"> yes</td><td width="84"><input type="radio" id="nopass" onClick="hidePassport()" name="pass" value="no"> No </td> 
-											<td width="119"> <label id="passLabel" style="visibility:hidden">Passport Number</label></td>
-											<td width="203"><input style="visibility:hidden" id="passText" name="passno" type="text" class="form-control" placeholder="Passport number"></td>
-										</tr>
-									</table>
-								</div>
-								<div class="form-group">
 									<table width="842"> 
 										<tr>
 											<td width="210"><label>Willing to work in Japan</label></td>
@@ -168,60 +140,10 @@
 									</table>
 								</div>
 								<div class="form-group">
-									<table width="882"> 
-										<tr>
-											<td width="210"><label>Your Confident Language</label></td>
-											<td width="52"><input id="cc" name="conf[]" value="c" type="checkbox"> &nbsp;C </td>
-											<td width="66"><input id="cj" name="conf[]" value="Java" type="checkbox">&nbsp;Java </td>
-											<td width="80"><input id="ccn" name="conf[]" value="C#.Net" type="checkbox">&nbsp;C#.Net </td>
-											<td width="90"><input id="cn" name="conf[]" value="Networks" type="checkbox">&nbsp;Networks </td>
-											<td width="60"><input id="cs" type="checkbox" name="conf[]" value="SAP">&nbsp;SAP</td>
-											<td width="75"><input id="co" name="conf[]" value="" onChange="displayConfOther()" type="checkbox">&nbsp;Others </td>
-											<td width="213"><input style="visibility:hidden" id="confother" name="confother" type="text" class="form-control" placeholder="Your Confident Language" onBlur="updateConfOther()"></td>
-										</tr>
-									</table>
-								</div>	
-								<div class="form-group">
-									<table width="882"> 
-										<tr>
-											<td width="210"><label>Willing to work in</label></td>
-											<td width="52"><input id="wc" name="will[]" value="c" type="checkbox">&nbsp;C </td>
-											<td width="66"> <input id="wj" name="will[]" value="Java" type="checkbox">&nbsp;Java </td>
-											<td width="80"> <input id="wcn" name="will[]" value="C#.Net" type="checkbox">&nbsp;C#.Net </td>
-											<td width="90"> <input id="wn" name="will[]" type="checkbox" value="Networks">&nbsp;Networks</td>
-											<td width="60"> <input id="ws" name="will[]" type="checkbox" value="SAP">&nbsp;SAP</td>
-											<td width="75"> <input id="wo" name="will[]" type="checkbox" value="" onChange="displayWillOther()">&nbsp;Others </td>
-											<td width="213"><input style="visibility:hidden" id="willother" name="willother" type="text" class="form-control" placeholder="willing to work in" onBlur="updateWillOther()"></td>
-										</tr>
-									</table>
-								</div>				
-								<div class="form-group">
-									<table width="882"> 
-										<tr>
-											<td width="210"><label>Area of Interest</label></td>
-											<td width="52"> <input id="ac" name="aoi[]" value="c" type="checkbox">&nbsp;C </td>
-											<td width="66"><input id="aj" name="aoi[]" value="Java" type="checkbox">&nbsp;Java </td>
-											<td width="80"><input id="acn" name="aoi[]" type="checkbox" value="C#.Net">&nbsp;C#.Net </td>
-											<td width="90"><input id="an" name="aoi[]" type="checkbox" value="Networks">&nbsp;Networks</td>
-											<td width="60"><input id="as" name="aoi[]" type="checkbox" value="SAP">&nbsp;SAP</td>
-											<td width="75"><input id="ao" name="aoi[]" type="checkbox" value="" onChange="displayAreaOther()">&nbsp;Others </td>
-											<td width="213"> <input style="visibility:hidden" id="areaother" name="areaother" type="text" class="form-control" placeholder="Your Area of Interest" onBlur="updateAreaOther()"></td>
-										</tr>
-									</table> 
-								</div>	
-								<div class="form-group">
 									<table>
 										<tr>
 											<td width="210"> <label>Address</label></td>
 											<td width="425"><textarea class="form-control" id="address" name="address" placeholder="Write your Address here..." style="height:100px;"></textarea></td>
-										</tr>
-									</table>
-								</div>
-								<div class="form-group">
-									<table> 
-										<tr>
-											<td width="210"> <label>Pincode</label></td>
-											<td width="175"><input type="text" id="pincode" name="pincode" class="form-control" placeholder="Pincode"></td>
 										</tr>
 									</table>
 								</div>
